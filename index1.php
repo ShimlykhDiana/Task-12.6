@@ -174,9 +174,9 @@ function getPerfectPartner($strSurname,$strName,$strPatronymic,$persons_array){
     $fullName=mb_convert_case(getFullnameFromParts($strSurname,$strName,$strPatronymic), MB_CASE_TITLE);
     $gender=getGenderFromName($fullName) * (-1);
     do {
-      $randomPeron=$persons_array[rand(1,count($persons_array)-1)]; // fetch a random person from the array
+      $randomPeron=$persons_array[rand(1,count($persons_array)-1)]; //
       $match=$randomPeron['fullname'];
-    } while ( getGenderFromName( $match ) !== $gender); // check for opposite sex
+    } while ( getGenderFromName( $match ) !== $gender); 
     $matchValue=(rand(5000,10000))/100;
     return getShortName($fullName).' + '.getShortName($match).' ='.PHP_EOL.'&#9825;  Perfect for '.$matchValue.'% &#9825;';
     }
